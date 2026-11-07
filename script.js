@@ -126,6 +126,8 @@ console .log (sumArray ([21, 45, 12, 65]));
 
 function largestNumber(numbers) {
    let biggest = numbers[0];
+   //biggest = numbers[0];
+   //let biggest = 0;
    for (let i = 1; i < numbers.length; i++){
        if (numbers[i] > biggest) {
            biggest = numbers[i];
@@ -135,3 +137,57 @@ function largestNumber(numbers) {
 }
 
  console.log(largestNumber ([10, 25, 107, 28]));
+ //console.log(largestNumber ([-10, -25, -107, -28]));
+ //console.log(largestNumber ([-5, -2, -9]));
+
+ // Day 5 Objects
+
+ const student = {
+    name: "Archita Patel",
+    city: "Mumbai",
+    college: "RJ College",
+    skills: ["Html", "CSS", "JavaScript"]
+ };
+
+ console.log(student.name)
+ console.log(student["city"]);
+ console.log(student.college);
+ console.log(student.skills[0]);
+
+ student.course = "MSC-IT" ;
+ console.log(student);
+
+ for (const skill of student.skills) {
+    console.log("skill:", skill);
+ }
+
+ //Day 5 (Part 2) DOM
+
+ const button = document.getElementById("greetBtn");
+ const message = document.getElementById("message");
+
+ button.addEventListener("click", function (){
+//message.textContent = "Hello, " + student.name + "! JavaScript is working.";
+message.textContent = "Hello, " + student.name + "! I am studying at " + student.college;
+});
+
+// Day 5 (Part 3) Counter
+
+let count = 0;
+const counterBtn = document.getElementById("counterBtn");
+
+counterBtn.addEventListener("click", function () {
+    count = count + 2;
+    counterBtn.textContent = "Clicked: " + count;
+});
+
+// Day 5 (Part 4) Reset Button
+
+const resetBtn = document.getElementById("resetBtn");
+
+resetBtn.addEventListener("click", function () {
+    count = 0;
+    counterBtn.textContent = "Clicked: " + count;
+});
+
+
