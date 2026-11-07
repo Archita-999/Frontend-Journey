@@ -97,10 +97,10 @@ button.btn{
     font-size: 1rem;
 }
 
-#resetBtn{
+#resetBtn {
     background: white;
-    color: 5a6a7a;
-    border: 10px solid #5a7a6a;
+    color: #5a7a6a;
+    border: 2px solid #5a7a6a;
     margin-left: 10px;
     font-size: 1rem;
 }
@@ -108,4 +108,42 @@ button.btn{
 #resetBtn:hover {
     background: #5a7a6a;
     color: white;
+}
+
+.todo{
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.todo h2 {
+    margin-bottom: 16px;
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-input .btn {
+    margin-top: 0;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.deleteBtn {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
 }

@@ -57,7 +57,6 @@ for (let i = 1; i <= 20; i++) {
 }
 
 // Day 4 Functions
-
 function greet(name) {
     return "Hello, " + name + "!" ;
 }
@@ -190,4 +189,31 @@ resetBtn.addEventListener("click", function () {
     counterBtn.textContent = "Clicked: " + count;
 });
 
+// Day 6: To-Do List
 
+const taskInput = document.getElementById("taskInput");
+const addBtn = document.getElementById("addBtn");
+const taskList = document.getElementById("taskList");
+
+addBtn.addEventListener("click", function () {
+    const text = taskInput.value.trim();
+    if (text === "") {
+        return;
+    }
+    const li = document.createElement("li");
+   
+    const span = document.createElement("Span");
+    span.textContent = text;
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent ="Delete";
+    deleteBtn.className ="deleteBtn";
+    deleteBtn.addEventListener("click", function () {
+        li.remove();
+    });
+
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    taskList.appendChild(li);
+    taskInput.value = "";
+});
