@@ -147,3 +147,12 @@ button.btn{
     border-radius: 6px;
     cursor: pointer;
 }
+
+#taskList span {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #888;
+}

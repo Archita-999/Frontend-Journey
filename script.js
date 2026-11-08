@@ -191,7 +191,7 @@ resetBtn.addEventListener("click", function () {
 
 // Day 6: To-Do List
 
-const taskInput = document.getElementById("taskInput");
+/*const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 
@@ -216,4 +216,41 @@ addBtn.addEventListener("click", function () {
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
     taskInput.value = "";
+}); */
+
+// Day 7 
+
+function addTask() {
+    const text = taskInput.value.trim();
+    if (text === "") {
+        return;
+    }
+
+    const li = document.createElement("li");
+
+    const span = document.createElement("Span");
+    span.textContent = text;
+    span.addEventListener("click", function () {
+        span.classList.toggle("done");
+    });
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.className = "deleteBtn";
+    deleteBtn.addEventListener("click", function () {
+        li.remove();
+    });
+
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    taskList.appendChild(li);
+    taskInput.value = "";
+}
+
+addBtn.addEventListener("click", addTask);
+
+taskInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        addTask();
+    }
 });
