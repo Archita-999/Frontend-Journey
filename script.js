@@ -318,7 +318,7 @@ taskInput.addEventListener("keydown", function (e) {
     }
 });
 
-// Day 8: Part 2 Clear All Button
+// Day 8: Part 2 Clear All Button (Challenge)
 
 const clearallbtn = document.getElementById("button");
 clearallbtn.addEventListener("click", function () {
@@ -326,3 +326,26 @@ clearallbtn.addEventListener("click", function () {
     saveTasks();
     renderTasks();
 });
+
+// Day 9: Weather API
+
+const weatherBtn = document.getElementById("weatherBtn");
+const weatherResult = document.getElementById("weatherResult");
+async function getWeather() {
+    weatherResult.textContent = "Loading....";
+    const [latitude, longitude] = document.getElementById("citySelect").value.split(",").map(Number);
+
+    try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m`;
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+
+        weatherResult.textContent = `🌡️ Temperature: ${data.current.temperature_2m}°C, 🍃 Wind: ${data.current.wind_speed_10m} km/h`;
+    } catch (error) {
+        weatherResult.textContent = "Could not load weather. Please try again.";
+        console.log(error);
+    }
+}
+weatherBtn.addEventListener("click", getWeather);
+

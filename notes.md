@@ -14,5 +14,5 @@ Day 6: I created to-do list later added delete button. I learned if user does no
 
 Day 7: I recreated to-do list, this time I can cross out completed tasks and add a task by pressing Enter.
 
-Day 8: 
+Day 8: I saved To-Do list using local storage, and created a ClearAll button. I fixed a bug where I accidentally wrote stringyfy instead of stringify. 
 
