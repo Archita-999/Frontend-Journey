@@ -1,4 +1,4 @@
-let firstName = "Archita"; //text (called a string)
+/*let firstName = "Archita"; //text (called a string)
 const city = "Mumbai"; //a value that will not change
 let daysCompleted = 1; //a number
 let isLearning = true; //true or false (called a boolean)
@@ -187,7 +187,7 @@ const resetBtn = document.getElementById("resetBtn");
 resetBtn.addEventListener("click", function () {
     count = 0;
     counterBtn.textContent = "Clicked: " + count;
-});
+}); */
 
 // Day 6: To-Do List
 
@@ -336,7 +336,7 @@ async function getWeather() {
     const [latitude, longitude] = document.getElementById("citySelect").value.split(",").map(Number);
 
     try {
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m`;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m&timezone=auto`;
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);

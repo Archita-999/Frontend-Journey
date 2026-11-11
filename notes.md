@@ -16,3 +16,7 @@ Day 7: I recreated to-do list, this time I can cross out completed tasks and add
 
 Day 8: I saved To-Do list using local storage, and created a ClearAll button. I fixed a bug where I accidentally wrote stringyfy instead of stringify. 
 
+Day 9: I learned how to use AN API for fetching data from the internet. And completed challenge in which i add one more city to chaeck its temperature and add emojis. I forgot to add "" in the id that I fixed later.
+
+
+

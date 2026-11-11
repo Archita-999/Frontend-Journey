@@ -3,7 +3,8 @@
     <head>
         <meta charset ="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My First Page</title>
+        <title>Archita Patel | Frontend Developer in Training</title>
+        <meta name="description" content="Portfolio of Archita Patel: UI/UX designer learning frontend develpoment with HTML, CSS, and JavaScript."> 
         <link rel="stylesheet" href ="style.css">
     </head>
     <body>
@@ -11,7 +12,7 @@
             <h1 class="logo">Archita</h1>
             <nav>
                 <a href="#home">Home</a>
-                <a href="#cards">Cards</a>
+                <a href="#cards">Projects</a>
                 <a href="#contact">Contact</a>
 
             </nav> 
@@ -26,7 +27,7 @@
                 <button id="greetBtn" class="btn">Click me</button>
                 <p id="message"></p>
                 <button id="counterBtn" class="btn">Clicked: 0</button>
-                <button id="resetBtn" class="Btn">Reset</button>
+                <button id="resetBtn" class="btn">Reset</button>
             </section>
 
             <section class="todo" id="todo">
@@ -41,35 +42,29 @@
 
             <section class="weather" id="weather">
                 <h2>Mumbai Weather</h2>
-                <button id="weatherBtn" class="Btn">Get Weather</button>
-                <p id="weatherResult"></p>
                 <select id="citySelect">
                     <option value="19.07,72.88">Mumbai</option>
                     <option value="28.61,77.20">Delhi</option>
                 </select>
+                <button id="weatherBtn" class="btn">Get Weather</button>
+                <p id="weatherResult"></p>
             </section>
 
             <section class="cards" id="cards">
-                <article class="card">
-                    <h3> Project 1</h3>
-                    <p> Short Description of my first project</p>
-
-                </article>
-
-                <article class="card">
-                    <h3> Project 2</h3>
-                    <p> Short description of my second project</p>
-                </article>
-
-                <article class="card">
-                    <h3> Project 3</h3>
-                    <p>Short description of my third project</p>
-                </article>
-
-                <article class="card">
-                    <h3> Project 4</h3>
-                    <p>Short description of my fourth project</p>
-                </article>
+               <article class="card">
+                <h3>To-Do List</h3>
+                <p>Add, complete and delete tasks. Tasks are saved in the browser with localStorage.</p>
+                <a href="#todo">Try It</a>
+               </article>
+               <article class="card">
+                <h3>Weather App</h3>
+                <p>Shows live temperature and wind speed for a city using the Open-Meteo API.</p>
+                <a href="#weather">Try It</a>
+               </article>
+               <article class="card">
+                <h3>Quiz App</h3>
+                <p>Upcoming project</p>
+               </article>
 
             </section>
 
