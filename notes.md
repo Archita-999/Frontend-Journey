@@ -12,5 +12,7 @@ Day 5: I learned about objects. Methods of calling value, and it stores in key, 
 
 Day 6: I created to-do list later added delete button. I learned if user does not write anything, it should not throw any error or add blank todo list. Learned about more CSS properties.
 
-Day 7: 
+Day 7: I recreated to-do list, this time I can cross out completed tasks and add a task by pressing Enter.
+
+Day 8: 
 
