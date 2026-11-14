@@ -389,6 +389,10 @@ let currentQuestion = 0;
 let score = 0;
 let quizFinished = false;
 
+let bestScore = Number(localStorage.getItem("bestScore")) || 0;
+const bestScoreText = document.getElementById("bestScore");
+bestScoreText.textContent = "Best Score: " + bestScore;
+
 function showQuestion() {
     const q = questions[currentQuestion];
     quizProgress.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
@@ -456,8 +460,26 @@ nextBtn.addEventListener("click", function () {
     } else if (currentQuestion === questions.length - 1) {
         quizFinished = true;
         showResult();
+
+        function showResult() {
+    quizProgress.textContent = "Quiz finished";
+    questionText.textContent = `Your score: ${score} out of ${questions.length}`;
+    optionsBox.innerHTML = "";
+    quizFeedback.textContent = score === questions.length ? "Perfect score!" : "Good try! Play again to improve.";
+    nextBtn.textContent = "Play Again";
+    nextBtn.style.display = "inline-block";
+
+    if (score > bestScore) {
+        bestScore = score;
+        localStorage.setItem("bestScore", bestScore);
+        bestScoreText.textContent = "Best Score: " + bestScore;
+    }
+}
     } else {
         currentQuestion = currentQuestion + 1;
         showQuestion();
     }
 });
+
+
+

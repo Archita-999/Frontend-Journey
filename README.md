@@ -11,7 +11,7 @@ A beginner frontend project built while learning HTML, CSS and JavaScript. It st
 - **To-do list:** add tasks with the Add button or the Enter key, mark them as done, delete them, or clear everything. Empty tasks are not added.
 - Tasks are saved in the browser with localStorage, so they are still there after a refresh
 - **Weather app:** choose a city (Mumbai or Delhi) and get the current temperature and wind speed from the Open-Meteo API, with a loading message and an error message if the request fails
-
+- Quiz App with instant feedback, a final score and a play-again option.
 ## Built with
 
 HTML, CSS (Flexbox, Grid, media queries) and JavaScript (DOM, events, fetch with async/await, localStorage)
@@ -38,7 +38,6 @@ HTML, CSS (Flexbox, Grid, media queries) and JavaScript (DOM, events, fetch with
 
 ## What I want to add next
 
-- A quiz app (the third project card)
 - Show the selected city's name in the weather heading
 - More cities in the weather app
 - Rebuild this portfolio in React
