@@ -18,5 +18,7 @@ Day 8: I saved To-Do list using local storage, and created a ClearAll button. I 
 
 Day 9: I learned how to use AN API for fetching data from the internet. And completed challenge in which i add one more city to chaeck its temperature and add emojis. I forgot to add "" in the id that I fixed later.
 
+Day 10: I learned how change placeholder cards into real projects. Before timezone=auto, the API showed the time in GMT. After adding it, it showed the time in Asia/Kolkata (Indian time), which is 5.5 hours ahead of GMT.
+
 
 
