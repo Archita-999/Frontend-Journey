@@ -1,4 +1,4 @@
-/*let firstName = "Archita"; //text (called a string)
+let firstName = "Archita"; //text (called a string)
 const city = "Mumbai"; //a value that will not change
 let daysCompleted = 1; //a number
 let isLearning = true; //true or false (called a boolean)
@@ -176,7 +176,7 @@ let count = 0;
 const counterBtn = document.getElementById("counterBtn");
 
 counterBtn.addEventListener("click", function () {
-    count = count + 2;
+    count = count + 1;
     counterBtn.textContent = "Clicked: " + count;
 });
 
@@ -187,7 +187,7 @@ const resetBtn = document.getElementById("resetBtn");
 resetBtn.addEventListener("click", function () {
     count = 0;
     counterBtn.textContent = "Clicked: " + count;
-}); */
+});
 
 // Day 6: To-Do List
 
