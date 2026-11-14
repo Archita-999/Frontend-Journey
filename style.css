@@ -204,3 +204,49 @@ select {
     
 }
 
+.quiz {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+#quizProgress {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+#questionText {
+    margin-bottom: 16px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #eef3f0;
+}
+
+.option.correct {
+    background: #d4edda;
+    border-color: #2e7d32;
+}
+
+.option.wrong {
+    background: #f8d7da;
+    border-color: #c0392b;
+}
+
+#quizFeedback {
+    min-height: 1.6em;
+    margin: 8px 0;
+}

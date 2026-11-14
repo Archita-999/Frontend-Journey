@@ -349,3 +349,115 @@ async function getWeather() {
 }
 weatherBtn.addEventListener("click", getWeather);
 
+// Day 11: Quiz App
+
+const questions = [
+    {
+        question: "Which tag is used for the main heading of a page?",
+        options: ["<h1>", "<p>", "<div>", "<span>"],
+        answer: 0
+    },
+    {
+        question: "Which CSS property changes the text color?",
+        options: ["font-style", "color", "background", "text-align"],
+        answer: 1
+    },
+    {
+        question: "Which keyword creates a variable that cannot be reassigned?",
+        options: ["let", "var", "const", "function"],
+        answer: 2
+    },
+    {
+        question: "What does DOM stand for?",
+        options: ["Data Object Model", "Document Object Model", "Display Order Method", "Digital Output Map"],
+        answer: 1
+    },
+    {
+        question: "Which method adds an item to the end of an array?",
+        options: ["pop()", "shift()", "push()", "splice()"],
+        answer: 2
+    }
+];
+
+const quizProgress = document.getElementById("quizProgress");
+const questionText = document.getElementById("questionText");
+const optionsBox = document.getElementById("optionsBox");
+const quizFeedback = document.getElementById("quizFeedback");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentQuestion = 0;
+let score = 0;
+let quizFinished = false;
+
+function showQuestion() {
+    const q = questions[currentQuestion];
+    quizProgress.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+    questionText.textContent = q.question;
+    quizFeedback.textContent = "";
+    optionsBox.innerHTML = "";
+    nextBtn.style.display = "none";
+
+    q.options.forEach(function (optionText, index) {
+        const btn = document.createElement("button");
+        btn.textContent = optionText;
+        btn.className = "option";
+        btn.addEventListener("click", function () {
+            checkAnswer(index);
+        });
+        optionsBox.appendChild(btn);
+    });
+}
+
+// Stage B
+
+function checkAnswer(selectedIndex) {
+    const q = questions[currentQuestion];
+    const optionButtons = optionsBox.querySelectorAll(".option");
+
+    optionButtons.forEach(function (btn, index) {
+        btn.disabled = true;
+        if (index === q.answer) {
+            btn.classList.add("correct");
+        }
+    });
+
+    if (selectedIndex === q.answer) {
+        score = score + 1;
+        quizFeedback.textContent = "Correct!";
+    } else {
+        optionButtons[selectedIndex].classList.add("wrong");
+        quizFeedback.textContent = "Not quite. The correct answer is highlighted.";
+    }
+
+    nextBtn.style.display = "inline-block";
+    nextBtn.textContent = currentQuestion === questions.length - 1 ? "See Result" : "Next";
+}
+
+showQuestion();
+
+// Stage C
+
+
+function showResult() {
+    quizProgress.textContent = "Quiz finished";
+    questionText.textContent = `Your score: ${score} out of ${questions.length}`;
+    optionsBox.innerHTML = "";
+    quizFeedback.textContent = score === questions.length ? "Perfect score!" : "Good try! Play again to improve.";
+    nextBtn.textContent = "Play Again";
+    nextBtn.style.display = "inline-block";
+}
+
+nextBtn.addEventListener("click", function () {
+    if (quizFinished) {
+        currentQuestion = 0;
+        score = 0;
+        quizFinished = false;
+        showQuestion();
+    } else if (currentQuestion === questions.length - 1) {
+        quizFinished = true;
+        showResult();
+    } else {
+        currentQuestion = currentQuestion + 1;
+        showQuestion();
+    }
+});
